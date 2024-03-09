@@ -16,11 +16,11 @@
     </div>
     <div>
       <a href="/">Home |</a>
-      <%if user == nil%>
-        <a href="/login">Login</a>
+      <%if user == nil %>
+        <a href="/login">Login |</a>
         <a href="/users/new">Signup</a>
       <%else%>
-        Hello, <%=user["username"]%>! |
+        Hello, <%= user["username"]%>! |
         <a href="/logout">Logout</a>
       <%end%>
       
