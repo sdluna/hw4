@@ -39,6 +39,14 @@
     </nav>
 
     <div class="container">
+      <%if flash["notice"] != nil %>
+        <div class="alert alert-primary" role="alert">
+        <%= flash["notice"]%>
+      <%end%>
+    </div>
+
+
+    <div class="container">
       <%= yield %>  
     </div>
 
