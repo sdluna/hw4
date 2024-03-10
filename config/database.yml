@@ -22,4 +22,7 @@ test:
 
 production:
   <<: *default
-  database: db/production.sqlite3
+  adapter: postgresql
+  database: placelogger_final_production
+  username: placelogger_final 
+  password: <%= ENV["PLACELOGGER_FINAL_DATABASE_PASSWORD"] %>
