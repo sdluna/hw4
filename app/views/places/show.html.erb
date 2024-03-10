@@ -11,14 +11,15 @@
       <div class="col-sm-6 col-md-4">
             <h5><%= entry["title"] %></h5>
             <p><strong><%= entry["occurred_on"] %></strong></p>
-            <p><em><%= entry["description"] %></em></p>
-            
+
             <!--check if image uploaded or linked-->
             <% if entry.uploaded_image.attached? %>
               <img src="<%= url_for(entry.uploaded_image) %>" class="img-fluid">
             <% else %>
               <img src="<%= entry["image"] %>" class="img-fluid">
             <% end %>
+
+            <div class="mt-3 mb-3"><em><%= entry["description"] %></em></div>
             
       </div>
     <% end %>
