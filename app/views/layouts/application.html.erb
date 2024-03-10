@@ -13,37 +13,38 @@
 
   <body>
     <% user = User.find_by({"id" => session["user_id"]}) %>
-    <nav class="navbar" style="background-color: #e3f2fd;" data-bs-theme="dark">
-      <div class="container-fluid">
-      <a class="navbar-brand" href="/">
-        <%if user == nil %> 
-        <%else%>
-            <div class="greeting">Welcome, <%= user["username"]%>!</div>
-        <%end%>
-        </a>
-        <span class="navbar-text">
-          
-            
-       <div>
-          <a href="/" class="btn btn-dark">Home</a>
-            <%if user == nil %>
-                <a href="/login" class="btn btn-primary">Login</a>
-                <a href="/users/new" class="btn btn-primary">Signup</a>
+    <div class= "mb-3">
+      <nav class="navbar" style="background-color: #e3f2fd;" data-bs-theme="dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="/">
+            <%if user == nil %> 
             <%else%>
-                <a href="/logout" class="btn btn-primary">Logout</a>
+                <div class="greeting">Welcome, <%= user["username"]%>!</div>
             <%end%>
+            </a>
+          <span class="navbar-text">
+    
+        <div>
+            <a href="/" class="btn btn-dark">Home</a>
+              <%if user == nil %>
+                  <a href="/login" class="btn btn-primary">Login</a>
+                  <a href="/users/new" class="btn btn-primary">Signup</a>
+              <%else%>
+                  <a href="/logout" class="btn btn-primary">Logout</a>
+              <%end%>
+          </div>
+              
+          </span>
         </div>
-            
-        </span>
-      </div>
-    </nav>
+      </nav>
+    </div>
 
     <div class="container">
       <%if flash["notice"] != nil %>
         <div class="alert alert-primary" role="alert">
         <%= flash["notice"]%>
       <%end%>
-    </div>
+      </div>
 
 
     <div class="container">

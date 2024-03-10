@@ -1,19 +1,20 @@
-<h1><%= @place["name"] %></h1>
 
-<h2>My Entries</h2>
-<% for entry in @entries %>
-  <ul>
-    <li>
-      <h5><%= entry["title"] %></h5>
-      <p><strong><%= entry["occurred_on"] %></strong></p>
-      <p><em><%= entry["description"] %></em></p>
-    </li>
-  </ul>
-<% end %>
+<h1><%= @place["name"] %></h1>
 
 <p>
   <a class="btn btn-primary" href="/entries/new?place_id=<%= @place["id"] %>">New Entry</a>
 </p>
+
+<h2>My Entries</h2>
+<div class="row">
+    <% for entry in @entries %>
+      <div class="col-sm-6 col-md-4">
+            <h5><%= entry["title"] %></h5>
+            <p><strong><%= entry["occurred_on"] %></strong></p>
+            <p><em><%= entry["description"] %></em></p>
+      </div>
+    <% end %>
+</div>
 
 <p>
   <a class="btn btn-dark" href="/places">Back to All Places</a>
